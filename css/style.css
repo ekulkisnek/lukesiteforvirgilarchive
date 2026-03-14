@@ -507,6 +507,18 @@ a.anchor-num {
     color: #00f;
 }
 
+.mass-spec-content img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    margin: 15px 0 8px 0;
+}
+.mass-spec-content p {
+    margin: 0 0 20px 0;
+    font-size: var(--main-fontsize);
+    line-height: var(--main-lineheight);
+}
+
 
 /* FOOTER
 -------------------------------------------------------------------------------*/
