@@ -513,8 +513,26 @@ a.anchor-num {
 footer {
     padding: 20px 10px;
 }
+.footer-inspired {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 15px;
+}
+.footer-inspired .inspired-by-label {
+    font-family: helvetica;
+    font-weight: 700;
+    font-size: 1.8vw;
+    color: #f00;
+    width: 100%;
+    margin-bottom: 5px;
+}
 footer .wrapper-logo {
     padding: 0 10px;
+}
+footer .wrapper-logo img {
+    max-height: 40px;
+    width: auto;
 }
 footer .inner-content {
     padding: 0 10px;
@@ -776,6 +794,12 @@ footer .line-break {
         padding-top: 0;
     }
     
+    .footer-inspired .inspired-by-label {
+        font-size: 5vw;
+    }
+    footer .wrapper-logo img {
+        max-height: 35px;
+    }
     footer .inner-content {
         padding: 0;
         margin-bottom: 20px;
@@ -863,5 +887,11 @@ footer .line-break {
     }
     footer .inner-content {
         font-size: 8pt !important;
+    }
+    .footer-inspired .inspired-by-label {
+        font-size: 14pt !important;
+    }
+    footer .wrapper-logo img {
+        max-height: 28px !important;
     }
 }
