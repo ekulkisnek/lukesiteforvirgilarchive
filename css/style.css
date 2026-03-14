@@ -56,15 +56,15 @@ body, select, input, textarea {
     background-color: #fff;
 }
 
-a {color: #000; text-decoration: none;}
-a:hover {color: #000;}
+a {color: #00f; text-decoration: underline;}
+a:hover {color: #00f;}
 
 /* Custom text-selection colors (remove any text shadows: http://twitter.com/miketaylr/status/12228805301) */
 ::-moz-selection{background: #000; color: #fff; text-shadow: none;}
 ::selection {background: #000; color: #fff; text-shadow: none;}
 
 /*	j.mp/webkit-tap-highlight-color */
-a:link {-webkit-tap-highlight-color: #fff; color: #fff;}
+a:link {-webkit-tap-highlight-color: rgba(0,0,255,0.2);}
 
 ins {background-color: #fff; color: #000; text-decoration: none;}
 mark {background-color: #fff; color: #000; font-style: italic; font-weight: bold;}
@@ -437,10 +437,11 @@ a.anchor-num {
     padding-bottom: 1em;
 }
 #contents .sub-title a {
-    color: #000;
+    color: #00f;
+    text-decoration: underline;
 }
 #contents .sub-title a:hover {
-    text-decoration: underline;
+    color: #0044cc;
 }
 #contents .sub-title {
     font-family: helvetica;
