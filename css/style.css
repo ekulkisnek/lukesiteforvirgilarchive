@@ -24,30 +24,36 @@ Theme: Canary---yellow trojanhorse
 
 :root {
     
-    --main-fontsize: 0.78vw;
-    --main-lineheight: 1.16em;
+    --main-fontsize: 0.55vw;
+    --main-lineheight: 1.1em;
     
-    --size-toc: 1vw;
-    --lineh-toc: 1.1em;
+    --size-toc: 0.7vw;
+    --lineh-toc: 1.05em;
     
-    --size-sectiontitle: 2.8vw;
-    --lineh-sectiontitle: 1em;
+    --size-sectiontitle: 1.6vw;
+    --lineh-sectiontitle: 0.95em;
     
 }
 
 
 
 
-html{
-    overflow: auto;
+html {
+    overflow: hidden;
+    height: 100vh;
 }
 body {
 	font-family: 'courier-prime.regular', 'Courier Prime', 'Courier New', monospace;
 	font-size: var(--main-fontsize);
     line-height: var(--main-lineheight);
-    overflow: auto;
+    overflow: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Scale to fit viewport */
+    transform-origin: top left;
+    transform: scale(0.65);
+    width: 153.85%;
+    min-height: 153.85vh;
 }
 
 
@@ -114,12 +120,12 @@ span.no-break {
 -------------------------------------------------------------------------------*/
 
 body {
-    padding-top: 16.5vw;
+    padding-top: 10vw;
 }
 
 
 header {
-    padding: 10px;
+    padding: 6px 10px;
     position: fixed;
     background-color: #fff;
     z-index: 999;
@@ -159,12 +165,20 @@ header {
 .luke-site-headline {
     font-family: helvetica;
     font-weight: 700;
-    font-size: clamp(24px, 6vw, 72px);
+    font-size: clamp(18px, 4vw, 48px);
     color: #f00;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 15px;
+    margin-bottom: 6px;
     line-height: 1.1;
+}
+.luke-site-url {
+    font-family: helvetica;
+    font-weight: 700;
+    font-size: clamp(8px, 0.9vw, 12px);
+    color: #000;
+    margin-bottom: 4px;
+    word-break: break-all;
 }
 
 /* Forked from virgil abloh 's "free game" - single horizontal line */
@@ -172,8 +186,8 @@ header {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 6px 10px;
-    margin-top: 15px;
+    gap: 4px 8px;
+    margin-top: 6px;
 }
 .forked-line .forked-from {
     font-family: helvetica;
@@ -185,9 +199,9 @@ header {
 .forked-line .forked-virgil-gif {
     display: inline-flex;
     align-items: center;
-    height: 4vw;
-    min-height: 32px;
-    max-height: 60px;
+    height: 2.8vw;
+    min-height: 22px;
+    max-height: 40px;
 }
 .forked-line .forked-virgil-gif img {
     height: 100%;
@@ -201,28 +215,28 @@ header {
     color: #000;
 }
 .forked-line .forked-free-game {
-    height: 4vw;
-    min-height: 32px;
-    max-height: 60px;
+    height: 2.8vw;
+    min-height: 22px;
+    max-height: 40px;
     width: auto;
     display: block;
 }
 
 .bio {
     padding: 0;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
+    overflow-wrap: break-word;
 }
 
 .intro-toc {
     text-align: center;
-    height: calc(6.3em + 10px);
-    height: calc(6.2em + 10px);
+    height: calc(6.2em + 4px);
     padding-left: 10px;
     font-family: helvetica;
     font-weight: 700;
     font-size: var(--size-toc);
     line-height: var(--lineh-toc);
-    padding-top: 3.2vw;
+    padding-top: 1.5vw;
 }
 
 .toc {
@@ -425,7 +439,7 @@ header {
 
 a.anchor-num {
     position: absolute;
-    margin-top: -16.5vw;
+    margin-top: -10vw;
 }
 
 #contents .section-title {
@@ -434,7 +448,7 @@ a.anchor-num {
     font-weight: 700;
     font-size: var(--size-sectiontitle);
     line-height: var(--lineh-sectiontitle);
-    padding-bottom: 1em;
+    padding-bottom: 0.25em;
 }
 #contents .sub-title a {
     color: #00f;
@@ -454,16 +468,19 @@ a.anchor-num {
 }
 
 #contents .row {
-    margin: 3vw 0;
+    margin: 0.8vw 0;
 }
 
 #contents .row .number-wrapper {
-    padding-top: 3vw;
+    padding-top: 0.5vw;
 }
 #contents .row .number-wrapper img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    max-height: 3.5vw;
+    height: auto;
+    width: auto;
 }
 #contents .row .preview-wrapper {
     
@@ -508,25 +525,61 @@ a.anchor-num {
 
 
 #contents .row .content-wrapper {
-    padding: 0 20px;
+    padding: 0 12px;
 }
 #contents .row .content-wrapper .content-title {
     color: #00f;
 }
+/* Project descriptions use body font (Courier Prime, regular) like the "See" link text */
+#contents .row .content-wrapper .project-desc {
+    font-family: 'courier-prime.regular', 'Courier Prime', 'Courier New', monospace;
+    font-weight: normal;
+    font-size: var(--main-fontsize);
+    line-height: var(--main-lineheight);
+    margin: 0 0 0.2em 0;
+}
+#contents .row .content-wrapper .project-desc a {
+    color: #00f;
+    text-decoration: underline;
+}
+#contents .row .content-wrapper .project-desc,
+.project-desc a {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
 
-.mass-spec-content img {
+.grounding-shoe-pdf {
+    margin-bottom: 6px;
+}
+.grounding-shoe-pdf iframe {
     display: block;
-    max-width: min(320px, 85vw);
+    max-width: min(140px, 35vw);
+    width: 140px;
+    height: 186px;
+    border: 2px solid #00f;
+}
+
+.mass-spec-content,
+.shoe-attempts-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.mass-spec-content img,
+.project-content img,
+.shoe-attempts-content img {
+    display: block;
+    max-width: min(160px, 40vw);
     width: 100%;
     height: auto;
-    margin: 15px 0 8px 0;
+    margin: 4px 0 2px 0;
 }
 
 
 /* FOOTER
 -------------------------------------------------------------------------------*/
 footer {
-    padding: 20px 10px;
+    padding: 8px 10px;
 }
 .footer-inspired {
     display: flex;
@@ -537,20 +590,24 @@ footer {
 .footer-inspired .inspired-by-label {
     font-family: helvetica;
     font-weight: 700;
-    font-size: 1.8vw;
+    font-size: 1.2vw;
     color: #f00;
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 footer .wrapper-logo {
     padding: 0 10px;
 }
 footer .wrapper-logo img {
-    max-height: 40px;
+    max-height: 24px;
     width: auto;
 }
 footer .inner-content {
     padding: 0 10px;
+    font-family: helvetica;
+    font-weight: 700;
+    font-size: var(--size-toc);
+    line-height: var(--lineh-toc);
 }
 
 footer .line-break {
@@ -611,7 +668,17 @@ footer .line-break {
 
 
 @media screen and (max-width: 960px) {
-    
+    /* Allow scroll on mobile - fit-to-page is for desktop */
+    html {
+        overflow: auto;
+        height: auto;
+    }
+    body {
+        transform: none;
+        width: 100%;
+        min-height: auto;
+        overflow: auto;
+    }
     
     :root {
     
@@ -661,6 +728,9 @@ footer .line-break {
     }
     .luke-site-headline {
         font-size: clamp(28px, 10vw, 80px);
+    }
+    .luke-site-url {
+        font-size: clamp(10px, 2.5vw, 14px);
     }
     .forked-line .forked-from,
     .forked-line .forked-possessive {
@@ -756,7 +826,14 @@ footer .line-break {
     #contents .row .content-wrapper {
         padding: 0 10px;
     }
-    .mass-spec-content img {
+    .grounding-shoe-pdf iframe {
+        max-width: min(180px, 50vw);
+        width: 180px;
+        height: 240px;
+    }
+    .mass-spec-content img,
+    .project-content img,
+    .shoe-attempts-content img {
         max-width: min(280px, 90vw);
     }
     
@@ -840,96 +917,145 @@ footer .line-break {
         
 }
 
-/* PRINT - fit all content on one page */
+/* PRINT - fit on one page, readable text, compact images */
 @media print {
     @page {
         size: A4;
-        margin: 8mm;
+        margin: 6mm;
     }
     * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
+    html {
+        overflow: visible !important;
+        height: auto !important;
+    }
     body {
-        font-size: 6pt !important;
+        font-size: 7pt !important;
         padding-top: 0 !important;
-        line-height: 1.2 !important;
+        line-height: 1.15 !important;
+        transform: none !important;
+        width: 100% !important;
+        min-height: auto !important;
+        overflow: visible !important;
     }
     header {
         position: static !important;
-        padding: 3px !important;
+        padding: 2px !important;
     }
     .luke-site-headline {
         font-size: 14pt !important;
-        margin-bottom: 4px !important;
+        margin-bottom: 2px !important;
+    }
+    .luke-site-url {
+        font-size: 6pt !important;
+        color: #000 !important;
+        margin-bottom: 2px !important;
     }
     .forked-line .forked-virgil-gif,
     .forked-line .forked-free-game {
-        height: 18px !important;
-        min-height: 16px !important;
-        max-height: 20px !important;
+        height: 14px !important;
+        min-height: 12px !important;
+        max-height: 16px !important;
     }
     .forked-line .forked-from,
     .forked-line .forked-possessive {
         font-size: 6pt !important;
     }
-    #contents .section-title {
-        font-size: 8pt !important;
-        line-height: 1.1 !important;
-        padding-bottom: 0.2em !important;
-    }
-    #contents .sub-title {
-        font-size: 5.5pt !important;
-        padding-bottom: 0.2em !important;
-        padding-left: 5% !important;
-        padding-right: 5% !important;
-        line-height: 1.15 !important;
-    }
-    #contents .row {
-        margin: 4px 0 !important;
-        page-break-inside: avoid;
-    }
-    #contents .row .number-wrapper img {
-        height: 16px !important;
-        max-height: 16px !important;
-        width: auto !important;
-    }
-    #contents .row .mobile.number-wrapper img {
-        height: 16px !important;
-    }
-    .mass-spec-content img {
-        max-width: 120px !important;
-        margin: 4px 0 !important;
-    }
     .bio {
-        font-size: 5.5pt !important;
-        margin-bottom: 3px !important;
+        font-size: 6pt !important;
+        margin-bottom: 2px !important;
     }
     .intro-toc {
         font-size: 6pt !important;
-        padding-top: 2px !important;
+        padding-top: 0 !important;
+        height: auto !important;
     }
     .toc {
-        font-size: 5.5pt !important;
+        font-size: 6pt !important;
     }
     .toc ol {
         padding-left: 8px !important;
     }
+    /* Force correct DOM order - override floats for print */
+    #contents .row .col-md-3,
+    #contents .row .col-md-9,
+    #contents .row .number-wrapper,
+    #contents .row .content-wrapper {
+        float: none !important;
+        width: 100% !important;
+        display: block !important;
+    }
+    #contents .row .desktop.number-wrapper {
+        display: block !important;
+    }
+    #contents .row .mobile.number-wrapper {
+        display: none !important;
+    }
+    #contents .section-title {
+        font-size: 8pt !important;
+        line-height: 1.05 !important;
+        padding-bottom: 0.1em !important;
+    }
+    #contents .sub-title {
+        font-size: 6pt !important;
+        padding-bottom: 0.15em !important;
+        padding-left: 3% !important;
+        padding-right: 3% !important;
+        line-height: 1.15 !important;
+    }
+    #contents .row {
+        margin: 2px 0 !important;
+        page-break-inside: avoid;
+    }
+    #contents .row .number-wrapper {
+        padding-top: 0 !important;
+    }
+    #contents .row .number-wrapper img {
+        height: 12px !important;
+        max-height: 12px !important;
+        width: auto !important;
+    }
+    #contents .row .mobile.number-wrapper img {
+        height: 12px !important;
+    }
+    .grounding-shoe-pdf {
+        display: none !important;
+    }
+    .mass-spec-content,
+    .shoe-attempts-content {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 2px !important;
+    }
+    .mass-spec-content img,
+    .project-content img,
+    .shoe-attempts-content img {
+        max-width: 70px !important;
+        margin: 0 !important;
+    }
+    #contents .content-wrapper,
+    #contents .content-wrapper a,
+    #contents .content-wrapper p,
+    #contents .row .content-wrapper .project-desc {
+        font-size: 7pt !important;
+    }
+    #contents .row .content-wrapper {
+        padding: 0 6px !important;
+    }
     footer {
-        padding: 5px !important;
+        padding: 4px !important;
     }
     footer .inner-content {
-        font-size: 5.5pt !important;
+        font-size: 7pt !important;
+        font-family: helvetica !important;
+        font-weight: 700 !important;
     }
     .footer-inspired .inspired-by-label {
         font-size: 8pt !important;
     }
     footer .wrapper-logo img {
-        max-height: 20px !important;
-    }
-    #contents .content-wrapper,
-    #contents .content-wrapper a,
-    #contents .content-wrapper p {
-        font-size: 5.5pt !important;
+        max-height: 16px !important;
     }
 }
