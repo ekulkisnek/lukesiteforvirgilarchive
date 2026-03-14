@@ -919,11 +919,11 @@ footer .line-break {
         
 }
 
-/* PRINT - fit on one page, readable text, compact images */
+/* PRINT - fill 2 full pages, readable text, well-proportioned */
 @media print {
     @page {
         size: A4;
-        margin: 6mm;
+        margin: 8mm;
     }
     * {
         -webkit-print-color-adjust: exact !important;
@@ -934,9 +934,9 @@ footer .line-break {
         height: auto !important;
     }
     body {
-        font-size: 7pt !important;
+        font-size: 8.5pt !important;
         padding-top: 0 !important;
-        line-height: 1.15 !important;
+        line-height: 1.2 !important;
         transform: none !important;
         width: 100% !important;
         min-height: auto !important;
@@ -944,46 +944,48 @@ footer .line-break {
     }
     header {
         position: static !important;
-        padding: 2px !important;
+        padding: 4px !important;
     }
     .luke-site-headline {
-        font-size: 14pt !important;
-        margin-bottom: 2px !important;
+        font-size: 18pt !important;
+        margin-bottom: 4px !important;
     }
     .luke-site-url {
-        font-size: 6pt !important;
+        font-size: 8pt !important;
         color: #000 !important;
-        margin-bottom: 2px !important;
+        margin-bottom: 4px !important;
     }
     .forked-line .forked-virgil-gif,
     .forked-line .forked-free-game {
-        height: 14px !important;
-        min-height: 12px !important;
-        max-height: 16px !important;
+        height: 22px !important;
+        min-height: 18px !important;
+        max-height: 26px !important;
     }
     .forked-line .forked-from,
     .forked-line .forked-possessive {
-        font-size: 6pt !important;
+        font-size: 9pt !important;
     }
     .bio {
-        font-size: 6pt !important;
-        margin-bottom: 2px !important;
+        font-size: 7.5pt !important;
+        margin-bottom: 4px !important;
     }
     .intro-toc {
-        font-size: 6pt !important;
-        padding-top: 0 !important;
+        font-size: 9pt !important;
+        padding-top: 4px !important;
         height: auto !important;
     }
     .toc {
-        font-size: 6pt !important;
+        font-size: 8pt !important;
     }
     .toc ol {
-        padding-left: 8px !important;
+        padding-left: 12px !important;
     }
     /* Force correct DOM order - number above title in print */
     #contents .row {
         display: flex !important;
         flex-direction: column !important;
+        margin: 10px 0 !important;
+        page-break-inside: avoid;
     }
     #contents .row .col-md-3,
     #contents .row .col-md-9,
@@ -1007,77 +1009,73 @@ footer .line-break {
         display: none !important;
     }
     #contents .section-title {
-        font-size: 8pt !important;
-        line-height: 1.05 !important;
-        padding-bottom: 0.1em !important;
+        font-size: 10.5pt !important;
+        line-height: 1.1 !important;
+        padding-bottom: 0.2em !important;
     }
     #contents .sub-title {
-        font-size: 6pt !important;
-        padding-bottom: 0.15em !important;
-        padding-left: 3% !important;
-        padding-right: 3% !important;
-        line-height: 1.15 !important;
-    }
-    #contents .row {
-        margin: 2px 0 !important;
-        page-break-inside: avoid;
+        font-size: 8pt !important;
+        padding-bottom: 0.25em !important;
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        line-height: 1.2 !important;
     }
     #contents .row .number-wrapper {
         padding-top: 0 !important;
     }
     #contents .row .number-wrapper img {
-        height: 12px !important;
-        max-height: 12px !important;
+        height: 22px !important;
+        max-height: 22px !important;
         width: auto !important;
     }
     #contents .row .mobile.number-wrapper img {
-        height: 12px !important;
+        height: 22px !important;
     }
     .grounding-shoe-pdf {
         display: block !important;
-        margin-bottom: 4px !important;
+        margin-bottom: 6px !important;
     }
     .grounding-shoe-pdf iframe,
     .grounding-shoe-pdf object {
-        max-width: 80px !important;
-        width: 80px !important;
-        height: 106px !important;
+        max-width: 125px !important;
+        width: 125px !important;
+        height: 166px !important;
         margin: 0 !important;
-        border: 1px solid #00f !important;
+        border: 2px solid #00f !important;
     }
     .mass-spec-content,
     .shoe-attempts-content {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 2px !important;
+        gap: 6px !important;
     }
     .mass-spec-content img,
     .project-content img,
     .shoe-attempts-content img {
-        max-width: 70px !important;
+        max-width: 125px !important;
         margin: 0 !important;
     }
     #contents .content-wrapper,
     #contents .content-wrapper a,
     #contents .content-wrapper p,
     #contents .row .content-wrapper .project-desc {
-        font-size: 7pt !important;
+        font-size: 8.5pt !important;
     }
     #contents .row .content-wrapper {
-        padding: 0 6px !important;
+        padding: 0 12px !important;
     }
     footer {
-        padding: 4px !important;
+        padding: 8px !important;
     }
     footer .inner-content {
-        font-size: 7pt !important;
+        font-size: 9pt !important;
         font-family: helvetica !important;
         font-weight: 700 !important;
     }
     .footer-inspired .inspired-by-label {
-        font-size: 8pt !important;
+        font-size: 11pt !important;
     }
     footer .wrapper-logo img {
-        max-height: 16px !important;
+        max-height: 28px !important;
     }
 }
