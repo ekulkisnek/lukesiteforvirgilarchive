@@ -796,4 +796,72 @@ footer .line-break {
         float: left;
     }
         
-} 
+}
+
+/* PRINT - fit content on one page */
+@media print {
+    @page {
+        size: auto;
+        margin: 12mm;
+    }
+    body {
+        font-size: 9pt;
+        padding-top: 0 !important;
+    }
+    header {
+        position: static !important;
+        padding: 5px !important;
+    }
+    .luke-site-headline {
+        font-size: 24pt !important;
+        margin-bottom: 8px !important;
+    }
+    .forked-line .forked-virgil-gif,
+    .forked-line .forked-free-game {
+        height: 24px !important;
+        min-height: 20px !important;
+        max-height: 28px !important;
+    }
+    .forked-line .forked-from,
+    .forked-line .forked-possessive {
+        font-size: 9pt !important;
+    }
+    #contents .section-title {
+        font-size: 12pt !important;
+        line-height: 1.2 !important;
+        padding-bottom: 0.3em !important;
+    }
+    #contents .sub-title {
+        font-size: 8pt !important;
+        padding-bottom: 0.3em !important;
+    }
+    #contents .row {
+        margin: 8px 0 !important;
+        page-break-inside: avoid;
+    }
+    #contents .row .number-wrapper img {
+        height: 22px !important;
+        max-height: 22px !important;
+        width: auto !important;
+    }
+    #contents .row .mobile.number-wrapper img {
+        height: 22px !important;
+    }
+    .bio {
+        font-size: 8pt !important;
+        margin-bottom: 5px !important;
+    }
+    .intro-toc {
+        font-size: 9pt !important;
+        padding-top: 5px !important;
+    }
+    .toc {
+        font-size: 8pt !important;
+    }
+    footer {
+        padding: 10px !important;
+    }
+    footer .inner-content {
+        font-size: 8pt !important;
+    }
+}
