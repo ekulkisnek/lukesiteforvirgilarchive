@@ -436,6 +436,12 @@ a.anchor-num {
     line-height: var(--lineh-sectiontitle);
     padding-bottom: 1em;
 }
+#contents .sub-title a {
+    color: #000;
+}
+#contents .sub-title a:hover {
+    text-decoration: underline;
+}
 #contents .sub-title {
     font-family: helvetica;
     font-weight: 700;
