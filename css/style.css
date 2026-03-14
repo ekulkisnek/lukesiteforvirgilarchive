@@ -155,6 +155,37 @@ header {
     height: auto;
 }
 
+/* LUKE's site overlay - positioned over Virgil gif, same size, red */
+.logo-overlay-wrapper {
+    position: relative;
+}
+.luke-site-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: helvetica;
+    font-weight: 700;
+    font-size: 8vw;
+    color: #f00;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    pointer-events: none;
+}
+
+/* Small FREE GAME logo in header corner */
+.logo-wrapper-header {
+    margin-top: 10px;
+}
+.logo-wrapper-header img {
+    width: 12vw !important;
+    margin-bottom: 0 !important;
+}
+
 .bio {
     padding: 0;
     margin-bottom: 10px;
@@ -572,6 +603,12 @@ footer .line-break {
     
     .logo {
         margin-top: 10px;
+    }
+    .luke-site-overlay {
+        font-size: 12vw;
+    }
+    .logo-wrapper-header img {
+        width: 25vw !important;
     }
     .logo-wrapper img {
         width: 100%;
