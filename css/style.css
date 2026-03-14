@@ -509,16 +509,10 @@ a.anchor-num {
 
 .mass-spec-content img {
     display: block;
-    max-width: 100%;
+    max-width: min(320px, 85vw);
     width: 100%;
+    height: auto;
     margin: 15px 0 8px 0;
-}
-.mass-spec-content p {
-    margin: 0 0 20px 0;
-    font-family: helvetica;
-    font-weight: 700;
-    font-size: var(--size-toc);
-    line-height: var(--lineh-toc);
 }
 
 
@@ -755,6 +749,9 @@ footer .line-break {
     #contents .row .content-wrapper {
         padding: 0 10px;
     }
+    .mass-spec-content img {
+        max-width: min(280px, 90vw);
+    }
     
     #contents .row .multiple-content {
         padding-top: 10px;
@@ -836,79 +833,96 @@ footer .line-break {
         
 }
 
-/* PRINT - fit content on one page */
+/* PRINT - fit all content on one page */
 @media print {
     @page {
-        size: auto;
-        margin: 12mm;
+        size: A4;
+        margin: 8mm;
+    }
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
     body {
-        font-size: 9pt;
+        font-size: 6pt !important;
         padding-top: 0 !important;
+        line-height: 1.2 !important;
     }
     header {
         position: static !important;
-        padding: 5px !important;
+        padding: 3px !important;
     }
     .luke-site-headline {
-        font-size: 24pt !important;
-        margin-bottom: 8px !important;
+        font-size: 14pt !important;
+        margin-bottom: 4px !important;
     }
     .forked-line .forked-virgil-gif,
     .forked-line .forked-free-game {
-        height: 24px !important;
-        min-height: 20px !important;
-        max-height: 28px !important;
+        height: 18px !important;
+        min-height: 16px !important;
+        max-height: 20px !important;
     }
     .forked-line .forked-from,
     .forked-line .forked-possessive {
-        font-size: 9pt !important;
+        font-size: 6pt !important;
     }
     #contents .section-title {
-        font-size: 12pt !important;
-        line-height: 1.2 !important;
-        padding-bottom: 0.3em !important;
+        font-size: 8pt !important;
+        line-height: 1.1 !important;
+        padding-bottom: 0.2em !important;
     }
     #contents .sub-title {
-        font-size: 8pt !important;
-        padding-bottom: 0.3em !important;
-    }
-    .mass-spec-content p {
-        font-size: 8pt !important;
+        font-size: 5.5pt !important;
+        padding-bottom: 0.2em !important;
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        line-height: 1.15 !important;
     }
     #contents .row {
-        margin: 8px 0 !important;
+        margin: 4px 0 !important;
         page-break-inside: avoid;
     }
     #contents .row .number-wrapper img {
-        height: 22px !important;
-        max-height: 22px !important;
+        height: 16px !important;
+        max-height: 16px !important;
         width: auto !important;
     }
     #contents .row .mobile.number-wrapper img {
-        height: 22px !important;
+        height: 16px !important;
+    }
+    .mass-spec-content img {
+        max-width: 120px !important;
+        margin: 4px 0 !important;
     }
     .bio {
-        font-size: 8pt !important;
-        margin-bottom: 5px !important;
+        font-size: 5.5pt !important;
+        margin-bottom: 3px !important;
     }
     .intro-toc {
-        font-size: 9pt !important;
-        padding-top: 5px !important;
+        font-size: 6pt !important;
+        padding-top: 2px !important;
     }
     .toc {
-        font-size: 8pt !important;
+        font-size: 5.5pt !important;
+    }
+    .toc ol {
+        padding-left: 8px !important;
     }
     footer {
-        padding: 10px !important;
+        padding: 5px !important;
     }
     footer .inner-content {
-        font-size: 8pt !important;
+        font-size: 5.5pt !important;
     }
     .footer-inspired .inspired-by-label {
-        font-size: 14pt !important;
+        font-size: 8pt !important;
     }
     footer .wrapper-logo img {
-        max-height: 28px !important;
+        max-height: 20px !important;
+    }
+    #contents .content-wrapper,
+    #contents .content-wrapper a,
+    #contents .content-wrapper p {
+        font-size: 5.5pt !important;
     }
 }
