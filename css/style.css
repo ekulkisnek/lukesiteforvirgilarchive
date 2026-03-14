@@ -155,31 +155,29 @@ header {
     height: auto;
 }
 
-/* LUKE's site overlay - positioned over Virgil gif, same size, red */
-.logo-overlay-wrapper {
-    position: relative;
-}
-.luke-site-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* LUKE's site - stacked above Virgil gif, no overlap */
+.luke-site-headline {
     font-family: helvetica;
     font-weight: 700;
     font-size: 8vw;
     color: #f00;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    pointer-events: none;
+    margin-bottom: 10px;
 }
 
-/* Small FREE GAME logo in header corner */
+/* Small FREE GAME logo in header with FORKED FROM */
 .logo-wrapper-header {
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.logo-wrapper-header .forked-from {
+    font-family: helvetica;
+    font-weight: 700;
+    font-size: 1.2vw;
+    color: #000;
 }
 .logo-wrapper-header img {
     width: 12vw !important;
@@ -604,8 +602,11 @@ footer .line-break {
     .logo {
         margin-top: 10px;
     }
-    .luke-site-overlay {
+    .luke-site-headline {
         font-size: 12vw;
+    }
+    .logo-wrapper-header .forked-from {
+        font-size: 3.5vw;
     }
     .logo-wrapper-header img {
         width: 25vw !important;
