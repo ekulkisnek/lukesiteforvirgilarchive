@@ -39,21 +39,15 @@ Theme: Canary---yellow trojanhorse
 
 
 html {
-    overflow: hidden;
-    height: 100vh;
+    overflow: auto;
 }
 body {
 	font-family: 'courier-prime.regular', 'Courier Prime', 'Courier New', monospace;
 	font-size: var(--main-fontsize);
     line-height: var(--main-lineheight);
-    overflow: hidden;
+    overflow: visible;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Scale to fit viewport */
-    transform-origin: top left;
-    transform: scale(0.65);
-    width: 153.85%;
-    min-height: 153.85vh;
 }
 
 
