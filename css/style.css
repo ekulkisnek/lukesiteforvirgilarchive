@@ -551,7 +551,8 @@ a.anchor-num {
 .grounding-shoe-pdf {
     margin-bottom: 6px;
 }
-.grounding-shoe-pdf iframe {
+.grounding-shoe-pdf iframe,
+.grounding-shoe-pdf object {
     display: block;
     max-width: min(140px, 35vw);
     width: 140px;
@@ -826,7 +827,8 @@ footer .line-break {
     #contents .row .content-wrapper {
         padding: 0 10px;
     }
-    .grounding-shoe-pdf iframe {
+    .grounding-shoe-pdf iframe,
+    .grounding-shoe-pdf object {
         max-width: min(180px, 50vw);
         width: 180px;
         height: 240px;
@@ -978,7 +980,11 @@ footer .line-break {
     .toc ol {
         padding-left: 8px !important;
     }
-    /* Force correct DOM order - override floats for print */
+    /* Force correct DOM order - number above title in print */
+    #contents .row {
+        display: flex !important;
+        flex-direction: column !important;
+    }
     #contents .row .col-md-3,
     #contents .row .col-md-9,
     #contents .row .number-wrapper,
@@ -989,6 +995,13 @@ footer .line-break {
     }
     #contents .row .desktop.number-wrapper {
         display: block !important;
+        order: 1 !important;
+    }
+    #contents .row .section-title {
+        order: 2 !important;
+    }
+    #contents .row .content-wrapper {
+        order: 3 !important;
     }
     #contents .row .mobile.number-wrapper {
         display: none !important;
@@ -1021,7 +1034,16 @@ footer .line-break {
         height: 12px !important;
     }
     .grounding-shoe-pdf {
-        display: none !important;
+        display: block !important;
+        margin-bottom: 4px !important;
+    }
+    .grounding-shoe-pdf iframe,
+    .grounding-shoe-pdf object {
+        max-width: 80px !important;
+        width: 80px !important;
+        height: 106px !important;
+        margin: 0 !important;
+        border: 1px solid #00f !important;
     }
     .mass-spec-content,
     .shoe-attempts-content {
